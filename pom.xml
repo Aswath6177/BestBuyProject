@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>Project</groupId>
@@ -9,8 +9,7 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>BestBuy</name>
-  <description>A simple BestBuy.</description>
-  <!-- FIXME change it to the project's website -->
+  <description>A simple BestBuy application</description>
   <url>http://www.example.com</url>
 
   <properties>
@@ -25,21 +24,26 @@
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
     </dependency>
+    
     <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.8.0</version> <!-- Use the latest version of TestNG -->
-            <scope>test</scope>
-        </dependency>
-    <dependency>
-    	<groupId>FirstSeleniumScripts</groupId>
-    	<artifactId>NewFirstSelenium</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.8.0</version>
+      <scope>test</scope>
     </dependency>
+
   </dependencies>
 
+  <repositories>
+    <!-- If this artifact is hosted in a remote repository, add repository details here -->
+    <repository>
+      <id>my-private-repo</id>
+      <url>https://example.com/repository</url>
+    </repository>
+  </repositories>
+
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -53,7 +57,6 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
@@ -64,7 +67,13 @@
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.0.0-M5</version>
+          <configuration>
+            <!-- Specify the TestNG suite file -->
+            <suiteXmlFiles>
+              <suiteXmlFile>testng.xml</suiteXmlFile>
+            </suiteXmlFiles>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -89,4 +98,5 @@
       </plugin>
     </plugins>
   </reporting>
+
 </project>

@@ -5,7 +5,15 @@
     <classes>
       <class name="Project.BestBuy.BestBuyTests">
         <methods>
+          <include name="ButtomLinks"/>
+          <include name="HomePage"/>
+          <include name="loginpage"/>
           <include name="openLink"/>
+          <include name="testSelectFromShopByDepartment"/>
+          <include name="testSearchAndAddItemToCart"/>
+          <include name="testSelectFromBrands"/>
+          <include name="loginpageNegativesenario"/>
+          <include name="homePage"/>
           <include name="checkoutWithDummyInfo"/>
         </methods>
       </class> <!-- Project.BestBuy.BestBuyTests -->

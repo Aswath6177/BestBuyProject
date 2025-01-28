@@ -98,6 +98,7 @@ public class BestBuyTests {
 		CommonFunctions.waitForFixTime(3000);
 		
 		shop.cartIconClick();
+		CommonFunctions.waitForFixTime(3000);
 		shop.checkoutClick();
 	}
 	
